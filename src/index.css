@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600;700&display=swap'); */
+
+
+body {
+  background-color: gray;
+  color: white;
+  font-family: 'Poppins', Arial, sans-serif;
+
+}
+
+.nav-item li {
+  position: relative;
+  color: white;
+  /* display: inline-block; */
+}
+
+.nav-item li::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  height: 2px;
+  transform: translate(-50%, 50%);
+  width: 0;
+  bottom: -2px;
+  background-color: yellow;
+  transition: all .3s ease-in-out;
+
+}
+
+.nav-item li:hover::before {
+  width: 100%;
+}
+
+.nav-item li.active {
+  color: gray;
+}
+
+.nav-item li.active::before {
+  width: 100%;
+  background-color: gray;
+}
+@media (max-width: 768px) {
+  .nav-item .active::before {
+    width: 50%;  /* Adjust width for mobile */
+  }
+}
